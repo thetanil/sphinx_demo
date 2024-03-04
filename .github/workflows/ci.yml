@@ -42,10 +42,9 @@ jobs:
 
       - name: unzip artifacts
         run: |
-          ls
-          gunzip _build.zip.gz
           unzip _build.zip
           rm _build.zip
+          ls
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
