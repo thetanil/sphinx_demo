@@ -20,13 +20,13 @@ jobs:
       - name: Sphinx build
         run: |
           sphinx-build doc _build
-          zip -r _build.zip _build
+          zip -r build.zip _build
 
       - name: upload build artifacts
         uses: actions/upload-artifact@v2
         with:
           name: build.zip
-          path: _build.zip
+          path: build.zip
           overwrite: true
       
   deploy:
@@ -38,13 +38,15 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: build.zip
-          path: _build.zip
+          path: build.zip
 
       - name: unzip artifacts
         run: |
-          unzip _build.zip
-          rm _build.zip
-          ls
+          ls -la 
+          unzip build.zip/build.zip
+          ls -la 
+          rm build.zip
+          ls -la 
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
