@@ -42,10 +42,7 @@ jobs:
 
       - name: unzip artifacts
         run: |
-          ls -la 
           unzip build.zip/build.zip
-          ls -la 
-          rm build.zip
           ls -la 
 
       - name: Upload artifact
