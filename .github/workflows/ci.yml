@@ -40,10 +40,14 @@ jobs:
           name: build.zip
           path: _build.zip
 
+      - name: unzip artifacts
+        run: |
+          unzip _build.zip
+          rm _build.zip
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload entire repository
           path: '_build/'
 
       - name: Deploy to GitHub Pages
