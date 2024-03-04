@@ -10,6 +10,9 @@ Welcome to sphinx-demo's documentation!
    :maxdepth: 2
    :caption: Contents:
 
+   usage
+   markdown
+
 
 
 Indices and tables
