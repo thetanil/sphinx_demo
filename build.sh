@@ -1,14 +1,10 @@
 #!/bin/bash
-
 set -e
 
-# check if the tmp directory exists
-if [ -d "tmp" ]; then
-    rm -rf tmp
+ARTIFACT_DIR=".artifacts"
+
+if [ -d "$ARTIFACT_DIR" ]; then
+    rm -rf "$ARTIFACT_DIR"
 fi
-
-# create the tmp directory
-mkdir tmp
-
-# run act with args supplied to this script
-act -j build --action-offline-mode --artifact-server-path tmp
+mkdir "$ARTIFACT_DIR"
+act -j build --action-offline-mode --artifact-server-path "$ARTIFACT_DIR"
